@@ -1,34 +1,55 @@
-# docker-project
+# Docker Playground
 
-Small Docker project with documentation of my learnings 
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-<br>
+#### [ 🔗 Docker Cheat sheet](./Documentation/cheat_sheet.md) 
 
-# Docker Syntax 
-###### * __apk__ is a package manager for alpine
-| Instruction telling docker server what to do | Argument to the instruction     | Explanation                                             | 
-|----------------------------------------------|---------------------------------|---------------------------------------------------------|
-| FROM                                         | Alpine                          | Use an existing docker image as a base                  |
-| RUN                                          | apk add --update redis          | Download and install a dependency                       |
-| CMD                                          | redis-server                    | Tell the image what to do when it starts as a container |
+## Description
 
+This repository contains a collection of projects that utilize Docker for containerization. The project serves as a playground to experiment with Docker and showcases various Docker-based projects. Each project demonstrates the implementation of Docker in different scenarios, showcasing its versatility and benefits. Along the way, I've learned valuable insights about Docker and containerization, which I'll share in this README.
 
-<br>
-<br>
+## Table of Contents
 
-  
-# Why Docker Creates Intermediate Containers Between Each Step
+- [Project List](#project-list)
+- [Installation and Setup](#installation-and-setup)
+- [Usage](#usage)
+- [Learnings](#learnings)
+- [Contributing](#contributing)
+- [License](#license)
 
-When you build a Docker image using a Dockerfile, Docker creates an **intermediate container** for each step specified in the Dockerfile. These intermediate containers are temporary and used during the build process to execute each instruction in the Dockerfile. This approach is part of Docker's build optimization strategy and helps improve image layer caching and build efficiency.
+## Project List
 
-Here's why Docker creates intermediate containers between each step:
+1. [Project 1](link-to-project-1): A brief description of what the project does.
+2. [Project 2](link-to-project-2): Another project that highlights a different use case.
+3. [Project 3](link-to-project-3): Yet another project showcasing Docker's application in a specific domain.
 
-1. **Isolation and Reproducibility**: Each instruction in the Dockerfile represents a specific action, such as installing software, copying files, or running commands. By creating an intermediate container for each instruction, Docker ensures that the changes made by one instruction do not affect subsequent instructions. This provides better isolation and reproducibility during the image build process.
+## Installation and Setup
 
-2. **Layer Caching**: Docker uses a layered file system for images, and each instruction in the Dockerfile creates a new layer. When you make changes to an existing image, Docker can reuse the cached intermediate layers if the Dockerfile hasn't changed. This saves time during subsequent builds because Docker can skip the steps that haven't changed, and only the modified instructions create new layers.
+To run these projects locally, you'll need to have Docker installed on your system. Visit the official Docker website ([https://www.docker.com/](https://www.docker.com/)) for instructions on how to install Docker for your platform.
 
-3. **Incremental Building**: When you modify your application code or the Dockerfile, Docker will only rebuild the steps affected by those changes, along with any subsequent steps. The unaffected steps can be fetched from the cache. This incremental building approach speeds up the build process, especially for larger and more complex images.
+## Usage
 
-4. **Cleanup**: Once an instruction in the Dockerfile is completed, Docker commits the changes to an intermediate container, creating a new image layer. Then, the temporary container is removed. This cleanup process ensures that the intermediate containers are not retained after the build, saving disk space and reducing clutter.
+For each project, navigate to its directory and follow the README instructions for building and running the Docker containers. The README in each project directory will provide detailed steps and commands to get you up and running with the application.
 
-Overall, the use of intermediate containers in the Docker build process is an essential part of Docker's optimization and caching mechanisms. It helps reduce build times, increases efficiency, and ensures that Docker images are reproducible and reliable.
+## Learnings
+
+Throughout the process of working on these projects, I've gained several valuable insights and learned important lessons about Docker and containerization. Some key takeaways include:
+
+- The benefits of containerization in terms of portability and consistency across different environments.
+- How to write efficient and optimized Dockerfiles to create lightweight and secure containers.
+- The power of Docker Compose for managing multi-container applications.
+- Strategies for orchestrating containers using tools like Kubernetes and Docker Swarm.
+- How to leverage Docker's networking features for seamless communication between containers.
+
+#### More implementation notes and explanation available: [ 🔗 Docker Implementation Notes](./Documentation//docker_implementation_notes.md)
+## Contributing
+
+Contributions are welcome! If you find any issues with the projects or have ideas for improvements, feel free to open an issue or submit a pull request. Let's learn from each other and make this repository even better!
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+Thanks for checking out this repository! I hope you find the projects and the learnings valuable. Happy Dockerizing! 🐳🚀

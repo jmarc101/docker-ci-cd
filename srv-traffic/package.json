@@ -1,7 +1,9 @@
 {
     "dependencies": {
-        "express": "*"
+        "express": "*",
+        "redis": "*"
     },
+    "name": "nodejs-redis-mini-server",
     "scripts": {
         "start": "node index.js"
     }

@@ -1,7 +1,7 @@
 {
     "dependencies": {
         "express": "*",
-        "redis": "*"
+        "redis": "^4.6.7"
     },
     "name": "nodejs-redis-mini-server",
     "scripts": {

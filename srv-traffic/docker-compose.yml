@@ -5,4 +5,4 @@ services:             # services list (containers to run)
   node-app: 
     build: .          # specify Dockerfile location
     ports:            # specify ports mapping
-      - "4001:9002"   # map port 8081 of container to port 4001 of host machine
+      - "4001:8081"   # map port 8081 of container to port 4001 of host machine

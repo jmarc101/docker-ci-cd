@@ -1,32 +1,29 @@
-const express = require('express')
-const redis = require('redis')
+const express = require('express');
+const redis = require('redis');
 
-const PORT =  9002;
+const SERVER_PORT =  8081;
+const REDIS_PORT =  6379;
 
 const app = express()
-
+ 
 const client = redis.createClient({
-    // This is the name of the service in the docker-compose.yml file
-    // We have access because we are in the same network because of the docker-compose.yml file
     host: 'redis-server',
-
-    // This is the default port for redis
-    port: 9001
+    port: 6379,
+    // The above config dont work on docker-compose standalone
+    // https://stackoverflow.com/questions/8754304/redis-connection-to-127-0-0-16379-failed-connect-econnrefused/68857073#68857073
+    // Below will work on docker-compose standalone
+    url: `redis://redis-server:${REDIS_PORT}`
 });
-
-
-client.on('error', err => console.log('Redis Client Error', err));
 
 client.connect();
 client.set('visits', 0);
 
-app.get('/', (req, res) => {
-    client.get('visits', (err, visits) => {
-        res.send('Number of visits is ' + visits);
-        client.set('visite', parseInt(visits) + 1);
-    });
+app.get('/', async (req, res) => {
+    const visits = await client.get('visits');
+    res.send('Number of visits is ' + visits ?? 0);
+    client.set('visits', parseInt(visits) + 1);
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(SERVER_PORT, () => {
+    console.log(`Server is running on port ${SERVER_PORT}`);
 });

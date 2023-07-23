@@ -1,8 +1,10 @@
 version: '3'          # specify docker-compose version
 services:             # services list (containers to run)
   redis-server:       # name of the first service (container)
+    restart: always   # always restart container if it stops
     image: 'redis'    # specify image to build container from
   node-app: 
+    restart: always   
     build: .          # specify Dockerfile location
     ports:            # specify ports mapping
       - "4001:8081"   # map port 8081 of container to port 4001 of host machine

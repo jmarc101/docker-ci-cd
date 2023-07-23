@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-#### [ 🔗 Docker Cheat sheet](./documentation/cheat_sheet.md) 
+#### [ 🔗 Docker Cheat sheet](./docs/cheat_sheet.md) 
 
 ## Description
 
@@ -41,7 +41,7 @@ Throughout the process of working on these projects, I've gained several valuabl
 - Strategies for orchestrating containers using tools like Kubernetes and Docker Swarm.
 - How to leverage Docker's networking features for seamless communication between containers.
 
-#### More implementation notes and explanation available: [ 🔗 Docker Implementation Notes](./documentation//docker_implementation_notes.md)
+#### More implementation notes and explanation available: [ 🔗 Docker Implementation Notes](./docs/docker_implementation_notes.md)
 ## Contributing
 
 Contributions are welcome! If you find any issues with the projects or have ideas for improvements, feel free to open an issue or submit a pull request. Let's learn from each other and make this repository even better!

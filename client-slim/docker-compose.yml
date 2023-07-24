@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  web:
+    build: 
+      context: .                    # current directory 
+      dockerfile: Dockerfile.dev    # use the Dockerfile.dev file
+    ports:
+      - "3000:3000"                 # map port 3000 on the host to port 3000 in the container
+    volumes:                        
+      - /app/node_modules           # don't try to map the node_modules folder in the container to the host
+      - .:/app                      # map the current directory on the host to the /app directory in the container
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - .:/app
+    command: ["npm", "run", "test"] # override the default command in the Dockerfile.dev file

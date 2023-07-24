@@ -1,0 +1,18 @@
+# Development image
+# Base image
+FROM node:lts-slim
+
+# working directory
+WORKDIR /app
+
+# copy package.json and package-lock.json
+COPY package*.json ./
+
+# install dependencies
+RUN npm install
+
+# copy all files
+COPY . .
+
+# Command to run the app
+CMD ["npm", "run", "start"]`

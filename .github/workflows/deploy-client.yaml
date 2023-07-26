@@ -36,4 +36,4 @@ jobs:
           environment_name: Jmarc101-client-env
           version_label: 1
           region: us-west-2
-          deployment_package: deploy.zip
+          deployment_package: client-deploy.zip

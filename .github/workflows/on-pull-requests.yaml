@@ -13,7 +13,7 @@ jobs:
     steps:
      - uses: actions/checkout@v3
      - name: Build client-slim test image
-       working-directory: ./client-slim
-       run: docker build -t react-app -f Dockerfile.dev .
+       working-directory: ./client
+       run: docker build -t jmarc101/client -f Dockerfile.dev .
      - name: Run client-slim test
-       run: docker run -e CI=true react-app npm run test
+       run: docker run -e CI=true jmarc101/client npm run test

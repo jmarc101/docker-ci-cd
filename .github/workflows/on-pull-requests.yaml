@@ -1,7 +1,7 @@
 # Name shown in Actions tab
 name: Run tests
 
-# Controls when the action will run. Triggers the workflow on push or pull request
+# Controls when the action will run. Triggers the workflow onweb pull request
 on: [pull_request]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -15,5 +15,5 @@ jobs:
      - name: Build client-slim test image
        working-directory: ./client-slim
        run: docker build -t react-app -f Dockerfile.dev .
-    - name: Run client-slim test
-      run: docker run -e CI=true react-app npm run test
+     - name: Run client-slim test
+       run: docker run -e CI=true react-app npm run test

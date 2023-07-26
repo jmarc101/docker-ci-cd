@@ -1,4 +1,4 @@
-# Docker Playground
+# Docker CI/CD project
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 

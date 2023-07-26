@@ -1,4 +1,4 @@
-# Docker CI/CD project
+# Docker CI/CD Project
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 

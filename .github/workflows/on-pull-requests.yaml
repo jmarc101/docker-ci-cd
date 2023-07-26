@@ -16,3 +16,4 @@ jobs:
        working-directory: ./client-slim
        run: docker build -t react-app -f Dockerfile.dev .
      - run: docker run -e CI=true react-app npm run test
+# small change

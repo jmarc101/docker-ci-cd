@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - uses: actions/checkout@v3
-     - name: Build and test server
+     - name: Build client-slim test image
        working-directory: ./client-slim
        run: docker build -t react-app -f Dockerfile.dev .
-     - run: docker run -e CI=true react-app npm run test
+    - name: Run client-slim test
+      run: docker run -e CI=true react-app npm run test

@@ -22,6 +22,7 @@ jobs:
       - run: docker run -e CI=true jmarc101/client npm run test
       
       - name: Generate deployement package
+        working-directory: ./client
         run: zip -r client-deploy.zip . -x "*.git"
 
       # Deploy the client to AWS Beanstalk

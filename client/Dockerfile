@@ -2,7 +2,7 @@
 # Build phase
 
 # 'as builder' is optional, but it's a good practice to name the phase
-FROM node:alpine as builder 
+FROM node:lts-slim as builder 
 WORKDIR "/app"
 COPY package.json .
 RUN npm install

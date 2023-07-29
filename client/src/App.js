@@ -7,18 +7,18 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          🔥🔥 Hello, world. 🔥🔥
+          Hello, world.
         </p>
         <p>
-          This apps re-renders from inside a container thanks to volume mounting.
+         This App is part of my experiment CI/CD with AWS Beanstalk. 🔥🚀
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://github.com/jmarc101/docker-ci-cd"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          View github repo
         </a>
       </header>
     </div>

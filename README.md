@@ -20,8 +20,8 @@ This repository contains a collection of projects that utilize Docker for contai
 
 ## Project List
 
-1. [Project 1](link-to-project-1): A brief description of what the project does.
-2. [Project 2](link-to-project-2): Another project that highlights a different use case.
+1. [Dockerized React Project](/client/README.md): This project is a simple, Dockerized React web application. 
+2. [github Actions CI/CD workflow](/.github/workflows//README.md): It's set up with a robust CI/CD pipeline leveraging Docker and GitHub Actions for building, testing, and deploying to AWS Beanstalk. While the React application itself is fairly straightforward, the key feature of this project is its seamless, automated deployment process.
 3. [Project 3](link-to-project-3): Yet another project showcasing Docker's application in a specific domain.
 
 ## Installation and Setup

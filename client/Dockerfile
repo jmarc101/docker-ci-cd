@@ -12,5 +12,7 @@ RUN npm run build
 # Run phase (production) - copy build folder from builder phase
 # Copy path is from nginx documentation https://hub.docker.com/_/nginx 
 FROM nginx
+# EXPOSE is for AWS Elastic Beanstalk to know which port to map
+EXPOSE 80 
 COPY --from=builder /app/build /usr/share/nginx/html
 # default command of nginx image starts nginx, so no need to specify it here

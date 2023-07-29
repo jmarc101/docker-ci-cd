@@ -1,0 +1,11 @@
+{
+  "name": "worker-app",
+  "dependencies": {
+    "nodemon": "^3.0.1",
+    "redis": "^4.6.7"
+  },
+  "scripts": {
+    "start": "nodemon index.js",
+    "dev": "nodemon"
+  }
+}
